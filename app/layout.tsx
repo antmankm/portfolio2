@@ -34,6 +34,9 @@ export default function RootLayout({
       </ul>
     </nav>
         {children}
+        <footer className="bg-gray-850 text-white text-center p-4 mt-8">
+          <p>&copy; {new Date().getFullYear()} Mon Portfolio. Tous droits réservés.</p>
+        </footer>
       </body>
     </html>
   );

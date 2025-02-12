@@ -55,3 +55,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 export { Button, buttonVariants }
+
+export default function DownloadCV() {
+  return (
+      <Button asChild className="  rounded-full  font-semibold text-lg bg-white text-black" variant="outline" size="lg" >
+        <a href="/CV.pdf" download="CV.pdf">
+          Télécharger mon CV
+        </a>
+      </Button>
+  );
+}
+
