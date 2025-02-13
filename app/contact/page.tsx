@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
-
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
@@ -22,10 +21,11 @@ const ContactPage = () => {
               <CardContent>
                 <div className="relative h-64 w-full">
                   <Image
-                    src="/contact-image.jpg" // Remplacez par le chemin de votre image
+                    src="/ctc.jpg" 
                     alt="Contactez-moi"
-                    fill
-                    className="rounded-lg object-cover"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
                   />
                 </div>
               </CardContent>
@@ -34,7 +34,6 @@ const ContactPage = () => {
               </CardFooter>
             </Card>
           </div>
-
 
           {/* Section de droite - Formulaire */}
           <div className="flex flex-col justify-center">
@@ -46,10 +45,10 @@ const ContactPage = () => {
                 <form className="space-y-6">
                   {/* Champ Nom */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white">
-                      Nom et Prenom
-                    </label>
-                    <input
+                    <label htmlFor="name" className="block text-sm font-medium text-white"> </label>
+                      
+                   
+                     <input
                       type="text"
                       id="name"
                       name="name"
@@ -61,9 +60,9 @@ const ContactPage = () => {
 
                   {/* Champ Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white">
-                      Email
-                    </label>
+                    <label htmlFor="email" className="block text-sm font-medium text-white"></label>
+                      
+                    
                     <input
                       type="email"
                       id="email"
@@ -76,9 +75,8 @@ const ContactPage = () => {
 
                   {/* Champ Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300">
-                      Message
-                    </label>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-300"> </label>
+                    
                     <textarea
                       id="message"
                       name="message"
