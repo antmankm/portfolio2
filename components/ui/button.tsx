@@ -58,7 +58,7 @@ export { Button, buttonVariants }
 
 export default function DownloadCV() {
   return (
-      <Button asChild className="  rounded-full  font-semibold text-lg bg-white text-black" variant="outline" size="lg" >
+      <Button asChild className=" text-transparent rounded-full  font-semibold text-lg bg-clip-text bg-gradient-to-r from-red-700 to-white " variant="outline" size="lg" >
         <a href="/CV.pdf" download="CV.pdf">
           Télécharger mon CV
         </a>
