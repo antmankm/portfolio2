@@ -10,9 +10,10 @@ export default function About() {
           <h1 className="text-4xl font-bold mb-6 text-white">
             À propos de moi
           </h1>
-          <p className="text-xl text-white">
-            Mon objectif est de créer des expériences utilisateurs que ce soit pour un site web, une application mobile ou une plateforme complexe, je me donne à fournir des résultats de haute qualité.
-          </p>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+            <p className="text-xl text-white">
+            Mon objectif est de créer des expériences utilisateurs, que ce soit pour un site web, une application mobile ou une plateforme complexe. Je m&apos;engage à fournir des résultats de haute qualité.
+            </p>
         </div>
 
         {/* Section de droite - Image */}
