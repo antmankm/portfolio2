@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+
 import DownloadCV from "@/components/ui/button";
 import About from "./about/page";
 import { motion } from "framer-motion";
@@ -94,12 +94,12 @@ export default function Home() {
         >
           <div className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden shadow-lg border-4 border-blue-400">
             <Image
-              src="/ANTMANKM.jpg" // Assurez-vous que le chemin est correct
+              src="/ANTMANKM.jpg" 
               alt="Photo de ANT"
-              width={300} // Largeur de l'image
-              height={300} // Hauteur de l'image
-              className="w-full h-full object-cover" // Assure que l'image remplit le conteneur sans déformation
-              priority // Charge l'image en priorité
+              width={300} 
+              height={300} 
+              className="w-full h-full object-cover" 
+              priority 
             />
           </div>
         </motion.div>

@@ -11,7 +11,7 @@ export default function About() {
             À propos de moi
           </h1>
           <p className="text-xl text-white">
-            Mon objectif est de créer des expériences utilisateurs que ce soit pour un site web, une application mobile ou une plateforme complexe, je m'engage à fournir des résultats de haute qualité.
+            Mon objectif est de créer des expériences utilisateurs que ce soit pour un site web, une application mobile ou une plateforme complexe, je me donne à fournir des résultats de haute qualité.
           </p>
         </div>
 

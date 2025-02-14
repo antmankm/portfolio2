@@ -8,42 +8,42 @@ const projects = [
   {
     id: 1,
     title: "SOUTIEN PALESTINE",
-    description: "Création d’un site de Don pour une organisation caritative fictive qui aide les communautés défavorisées.",
+    description: "mise en forme un site de Don pour une organisation caritative fictive qui aide les communautés défavorisées.",
     link: " https://charity-hub-five.vercel.app/",
     image: "/SP.jpg", // Chemin de l'image du projet 1
   },
   {
     id: 2,
     title: "Portfolio Interactif",
-    description: "Développement d'un portfolio interactif utilisant Html Tailwind CSS et animations JS.",
+    description: "Développement dun portfolio interactif en utilisant seulement Html Tailwind CSS et animations JS.",
     link: "https://antmankm.github.io/mon-site-web/",
     image: "/capture2.jpg", // Chemin de l'image du projet 2
   },
   {
     id: 3,
     title: "MOVIE APP ROUTER",
-    description: "Développement d'une application react permettant de regarder les bandes annonces des films à traver des Routes intégrer dans React.",
+    description: "Développement dune application react permettant de regarder les bandes annonces des films à traver des Routes intégrer dans React.",
     link: "https://github.com/antmankm/MOVIE-APP-ROUTER.git",
     image: "/movie.png", // Chemin de l'image du projet 3
   },
   {
     id: 4,
     title: "Portfolio 2",
-    description: "Deuxieme portfolio développer avec une seule page et des animations.",
+    description: "Deuxieme portfolio développé avec une seule page et des animations.",
     link: " https://portfolio-opal-eight-43.vercel.app",
     image: "/ME.png", // Chemin de l'image du projet 4
   },
   {
     id: 5,
     title: "CHARISEN",
-    description: "Création d’un site de Don pour une organisation caritative fictive qui aide les communautés défavorisées.",
+    description: "Création dun site de Don pour une organisation caritative fictive qui aide les communautés défavorisées.",
     link: "https://charity-hub-gamma.vercel.app/",
     image: "/DON.png", // Chemin de l'image du projet 5
   },
   {
     id: 6,
     title: "Application de gestion ",
-    description: " Développement en cour d'une application de gestion de prise de rendez-vous pour une salon de coiffure.",
+    description: " Développement en cour dune application de gestion de prise de rendez-vous pour une salon de coiffure.",
     link: "#",
     image: "/soon.jpg", // Chemin de l'image du projet 6
   },
