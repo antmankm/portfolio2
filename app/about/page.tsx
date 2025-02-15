@@ -8,11 +8,11 @@ export default function About() {
         {/* Section de gauche - Texte */}
         <div className="w-full md:w-1/2 p-4 md:p-6 text-left">
           <h1 className="text-4xl font-bold mb-6 text-white">
-            À propos de moi
+            A propos de moi
           </h1>
           {/* eslint-disable-next-line react/no-unescaped-entities */}
             <p className="text-xl text-white">
-            Mon objectif est de créer des expériences utilisateurs, que ce soit pour un site web, une application mobile ou une plateforme complexe. Je m&apos;engage à fournir des résultats de haute qualité.
+            Mon objectif est de créer des expériences utilisateurs, que ce soit pour un site web, une application mobile ou une plateforme complexe. Je m&apos;engage pour fournir des résultats de haute qualite.
             </p>
         </div>
 
@@ -53,7 +53,7 @@ export default function About() {
                 />
               </svg>
             </div>
-            <p className="text-xl">Projets réalisés</p>
+            <p className="text-xl">Projets realises</p>
             <p className="text-sm text-gray-400 mt-2">Front-end, Back-end, Full Stack</p>
           </div>
 
@@ -76,7 +76,7 @@ export default function About() {
                 />
               </svg>
             </div>
-            <p className="text-xl">Années d'expérience</p>
+            <p className="text-xl">Années d&apos;expérience</p>
             <p className="text-sm text-gray-400 mt-2">Depuis 2021</p>
           </div>
 
@@ -122,7 +122,7 @@ export default function About() {
                 />
               </svg>
             </div>
-            <p className="text-xl">Technologies maîtrisées</p>
+            <p className="text-xl">Technologies maîtrisees</p>
             <p className="text-sm text-gray-400 mt-2">React, Next.js, Node.js, etc.</p>
           </div>
         </div>

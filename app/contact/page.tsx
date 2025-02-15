@@ -1,9 +1,40 @@
-import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
-import Image from 'next/image';
-
+"use client";
+import React, { useState, ChangeEvent, FormEvent } from "react";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import Image from "next/image";
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    const res = await fetch("https://formspree.io/f/mqaeyevy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    setLoading(false);
+
+    if (res.ok) {
+      setSuccessMessage("✅ Message envoyé avec succès !");
+      setFormData({ name: "", email: "", message: "" }); // Réinitialiser le formulaire
+    } else {
+      setErrorMessage("❌ Une erreur s'est produite, veuillez réessayer.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -14,13 +45,13 @@ const ContactPage = () => {
               <CardHeader>
                 <CardTitle className="text-white text-2xl font-bold">Contactez-moi</CardTitle>
                 <CardDescription className="text-gray-400 mt-2">
-                  Vous avez un projet en tête ou une question ? Nhésitez pas à me contacter. Je suis toujours ouvert à de nouvelles opportunités et collaborations.
+                  Vous avez un projet en tête ou une question ? N&apos;hésitez pas à me contacter. Je suis toujours ouvert à de nouvelles opportunités et collaborations.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="relative h-64 w-full">
                   <Image
-                    src="/ctc.jpg" 
+                    src="/ctc.jpg"
                     alt="Contactez-moi"
                     layout="fill"
                     objectFit="cover"
@@ -41,47 +72,52 @@ const ContactPage = () => {
                 <CardTitle className="text-white text-2xl font-bold">Formulaire de contact</CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-6">
+                {/* Messages de succès ou d'erreur */}
+                {successMessage && <p className="text-green-500 text-center">{successMessage}</p>}
+                {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Champ Nom */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white"> </label>
-                      
-                   
-                     <input
+                    <label htmlFor="name" className="block text-sm font-medium text-white">Nom</label>
+                    <input
                       type="text"
                       id="name"
                       name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="Entrez votre nom et prénom"
-                      className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white"
                       required
                     />
                   </div>
 
                   {/* Champ Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white"></label>
-                      
-                    
+                    <label htmlFor="email" className="block text-sm font-medium text-white">Email</label>
                     <input
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="Votre email"
-                      className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white"
                       required
                     />
                   </div>
 
                   {/* Champ Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300"> </label>
-                    
+                    <label htmlFor="message" className="block text-sm font-medium text-white">Message</label>
                     <textarea
                       id="message"
                       name="message"
                       rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Votre message"
-                      className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white"
                       required
                     />
                   </div>
@@ -91,8 +127,9 @@ const ContactPage = () => {
                     <button
                       type="submit"
                       className="w-full text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-blue-700 px-4 py-2  text-lg font-semibold rounded-full"
+                      disabled={loading}
                     >
-                      Envoyer
+                      {loading ? "Envoi en cours..." : "Envoyer"}
                     </button>
                   </div>
                 </form>
